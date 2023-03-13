@@ -36,19 +36,26 @@
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
-          apiKey: "AIzaSyATzT3u-9iC4cRljRx80Edf4JXH9ErOHK4",
-          authDomain: "register-using-firebase-b6613.firebaseapp.com",
-          databaseURL: "https://register-using-firebase-b6613-default-rtdb.firebaseio.com",
-          projectId: "register-using-firebase-b6613",
-          storageBucket: "register-using-firebase-b6613.appspot.com",
-          messagingSenderId: "483827565293",
-          appId: "1:483827565293:web:9f6d7c4ad3c04c7df682e4"
+          apiKey: "AIzaSyCyG7D5QJSbca2Rd4ISvDx3XQNse9Y2kI4",
+          authDomain: "sweetroyo-f0a18.firebaseapp.com",
+          databaseURL: "https://sweetroyo-f0a18-default-rtdb.firebaseio.com",
+          projectId: "sweetroyo-f0a18",
+          storageBucket: "sweetroyo-f0a18.appspot.com",
+          messagingSenderId: "801479307893",
+          appId: "1:801479307893:web:2af5c756a8c881719d7e3c",
+          measurementId: "G-ZEB7YKK7TT"
         };
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
+      
 
         import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 
