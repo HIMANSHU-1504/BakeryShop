@@ -1,160 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <style>
-        .signUp{
-            margin-top: -5px;
+        body{
+            display: flex;
+            justify-content: center;
             align-items: center;
+            height: 100vh;
+            width: 100vh;
+            margin:0px;
+        }
+        #badge{
+            color: grey;
         }
     </style>
 </head>
-
 <body>
 
-    <!-- navigation starts -->
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a href="index.html" class="navbar-brand">SWEETREYO</a>
+    <div class="mb-5">
+        <h3 class="mb-3">Sign Up</h3>
+        <input type="text" placeholder="Fullname" id="nameInp" class="form-control mb-3">
+        <input type="text" placeholder="Email" id="emailInp" class="form-control mb-3">
+        <input type="text" placeholder="Username" id="userInp" class="form-control mb-3">
+        <input type="text" placeholder="Password" id="passInp" class="form-control mb-3">
+        <button type="text" id="sub_btn" class="btn w-100 btn-outline-primary">Sign Up</button>
+        <a href="login.html" class="badge badge-secondary py-1 w-100" id="badge">Already have an account?</a>
+    </div>
 
-        </div>
-    </nav>
-    <!-- navigation ends -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 
-    <!-- slider  section start -->
-    <section class="home-slider owl-carousel js-fullheight">
-        <div style="background-image: url(images/bg_1.jpg);">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row slider-text js-fullheight justify-content-center align-items-center"
-                    data-scrollax-parent="true">
-                    <div class="container">
-                        <div class="signUp">
-                            <h1 style="color:rgba(252, 252, 252, 0.941);text-align: center;margin-top: 5px;">Sign Up</h1><br>
-                            <p style="color:rgba(252, 252, 252, 0.941);text-align: center;">SIGNUP to buy homemade sweet dishes according to your preferences</p>
-                            <label style="color:black;font-size:35px;" for="user">Choose a Degistation</label>&nbsp;
-                            <select style="height: 30px;" id="user">
-                              <option value="customer">Customer</option>
-                              <option value="chef">Chef</option>
-                            </select><br><br>
-                            <input type="Name" placeholder="Enter your name" style="height: 40px;width: 500px;" ><br><br>
-                            <!-- <input type="Address" placeholder="Enter your address" style="height: 40px;"><br><br> -->
-                            <input type="Phone" placeholder="Enter your phone number" style="height: 40px;width: 500px;"><br><br>
-                            <input type="Email" placeholder="Enter your Email" style="height: 40px;width: 500px;"><br><br>
-                            <input type="password" placeholder="Enter your password" style="height: 40px;width: 500px;"><br><br>
-                            <input type="password" placeholder="Confirm your password" style="height: 40px;width: 500px;"><br><br>
-                            <button style="height: 40px;width: 90px;" onclick="window.location.href ='index.html';">Sign Up</button>
-                        </div>
-        
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </section>
-    <!-- slider  section end  -->
+        const firebaseConfig = {
+          apiKey: "AIzaSyATzT3u-9iC4cRljRx80Edf4JXH9ErOHK4",
+          authDomain: "register-using-firebase-b6613.firebaseapp.com",
+          databaseURL: "https://register-using-firebase-b6613-default-rtdb.firebaseio.com",
+          projectId: "register-using-firebase-b6613",
+          storageBucket: "register-using-firebase-b6613.appspot.com",
+          messagingSenderId: "483827565293",
+          appId: "1:483827565293:web:9f6d7c4ad3c04c7df682e4"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
 
-    <!-- footer section starts -->
-    <section class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-6 col-lg-3">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">SWEETREYO</h2>
-                        <p>We serve and take all type of cake orders. You can personalised cake of your own choice. We
-                            have the best chef in the city working for us and happying serving to you.
-                            <br><br><br>
-                            SWEETREYOcake@gmail.com
-                            <br>
-                            8888888888
-                        </p>
-                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                            <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                            <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                            <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Open Hours</h2>
-                        <ul class="list-unstyled open-hours">
-                            <li class="d-flex"><span>Monday</span><span>9:00 - 24:00</span></li>
-                            <li class="d-flex"><span>Tuesday</span><span>9:00 - 24:00</span></li>
-                            <li class="d-flex"><span>Wednesday</span><span>9:00 - 24:00</span></li>
-                            <li class="d-flex"><span>Thursday</span><span>9:00 - 24:00</span></li>
-                            <li class="d-flex"><span>Friday</span><span>9:00 - 02:00</span></li>
-                            <li class="d-flex"><span>Saturday</span><span>9:00 - 02:00</span></li>
-                            <li class="d-flex"><span>Sunday</span><span> 9:00 - 02:00</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Instagram</h2>
-                        <div class="thumb d-sm-flex">
-                            <a href="#" class="thumb-menu img" style="background-image: url(images/insta-1.jpg);"></a>
-                            <a href="#" class="thumb-menu img" style="background-image: url(images/insta-2.jpg);"></a>
-                            <a href="#" class="thumb-menu img" style="background-image: url(images/insta-3.jpg);"></a>
-                        </div>
-                        <div class="thumb d-sm-flex">
-                            <a href="#" class="thumb-menu img" style="background-image: url(images/insta-4.jpg);"></a>
-                            <a href="#" class="thumb-menu img" style="background-image: url(images/insta-5.jpg);"></a>
-                            <a href="#" class="thumb-menu img" style="background-image: url(images/insta-6.jpg);"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Newsletter</h2>
-                        <p>To get cake catalogue every month by subscribing below.</p>
-                        <form action="#" class="subscribe-form">
-                            <div class="form-group">
-                                <input type="text" class="form-control mb-2 text-center"
-                                    placeholder="sweetreyo@gmail.com">
-                                <input type="submit" value="Subscribe" class="form-control submit px-3">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 
-    <!-- footer section ends -->
+        const db = getDatabase();
 
-    <!-- scripts -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/jquery.timepicker.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
-    <script src="main.js"></script>
+        // refrences
+
+        const name = document.getElementById('nameInp');
+        const email = document.getElementById('emailInp');
+        const username = document.getElementById('userInp');
+        const pass = document.getElementById('passInp');
+        const submit = document.getElementById('sub_btn');
+
+        // validation
+
+        // function isEmptyOrSpaces(str){
+        //     return str === null || str.match(/^ *$/) !== null;
+        // }
+
+        function Validation(){
+            let nameregex = /[a-zA-Z0-9]+/;
+            let email = /[a-zA-Z0-9]+@(gmail|yahoo|outlook)\.com/;
+            let userregex = /[a-zA-Z0-9]{5,}/;
+
+            // if(isEmptyOrSpaces(name.value) || isEmptyOrSpaces(email.value) || isEmptyOrSpaces(username.value) || isEmptyOrSpaces(pass.value)) {
+            //     alert("You cannot left Empty Spaces");
+            //     return false;
+            // }
+
+            if(!nameregex.test(name.value)){
+                alert('The name Should only conatins alphabets');
+                return false;
+            }
+            if(!email.test(email.value)){
+                // alert('enter a valid email');
+                return false;
+            }
+            if(!userregex.test(username.value)){
+                alert('Username can only be a alphabet\n. Username must be atleat 5 character');
+                return false;
+            }
+
+            return true;
+        }
+
+            // Register to FireBase
+
+        function RegisterUser(){
+           if(Validation()){
+                return;
+           } ;
+            const dbRef = ref(db);
+
+            get(child(dbRef, "UserList/"+ username.value)).then((snapshot)=>{
+                if(snapshot.exists()){
+                    alert('Account Already Exists !');
+                }
+                else{
+                    set(ref(db,"UserList/"+ username.value),
+                    {
+                        fullname: name.value,
+                        email: email.value,
+                        username: username.value,
+                        password: pass.value
+                    })
+                    .then(()=>{
+                        alert("user added successfully");
+                    })
+                    .catch((error)=>{
+                        alert("error"+error);
+                    })
+                }
+            });
+        }
+
+        submit.addEventListener('click',RegisterUser);
+
+      </script>
 </body>
-
 </html>
